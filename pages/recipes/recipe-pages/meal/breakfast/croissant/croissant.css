@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&family=Ms+Madi&display=swap');
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAV BAR */
+.navbar {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+.logo img {
+    height: 125px;
+    width: auto;
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3b3937;
+}
+
+nav {
+    display: flex;
+    align-items: end;
+    gap: 25px;
+    font-size: 18px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+nav a:hover {
+    background-color: #f4f4f4;
+    color: #adadad;
+}
+
+nav a.active {
+    background-color: #f4f4f4;
+    color: #adadad;
+}
+
+
+/* SEARCH BAR */
+.search {
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+    background-color: #dfdcdc;
+    padding: 5px;
+}
+
+.search input {
+    margin-right: 20px;
+}
+
+.search input[type=text] {
+    color: #adadad;
+    float: right;
+    padding: 8px;
+    border: .5px solid #adadad;
+    margin-top: 1px;
+    margin-right: -1px;
+    font-size: 12px;
+}
+
+.search i {
+    color: #3b3937;
+    padding: 5.5px;
+    border: none;
+    margin-top: 1px;
+    margin-right: 15px;
+    border: .5px solid #adadad;
+}
+
+.search i:hover {
+    color: #adadad;
+    padding: 5.5px;
+    border: none;
+    margin-top: 1px;
+    margin-right: 15px;
+    border: .5px solid #adadad;
+}
+
+@media screen and (max-width: 600px) {
+    .search a, .search input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .search input[type=text] {
+      border: 1px solid #ccc;
+    }
+}
+
+/* HERO */
+.hero img {
+    width: 850px;
+    height: 566px;
+    margin-left: -10px;
+    object-fit: cover;
+}
+
+.whisk img {
+    width: 60px;
+    height: auto;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.hero-txt h3 {
+    font-family: 'Ms Madi', cursive;
+    font-size: 75px;
+    font-weight: 100;
+    color: #967f71;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.em {
+    font-style: italic;
+    color: #adadad;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.hero p {
+    color: #adadad;
+    font-size: 15px;
+}
+
+.whisk {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 125px;
+    gap: 5px;
+}
+
+.difficulty {
+    text-decoration: none;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #3b3937;
+    margin-top: 90px;
+    margin-bottom: -55px;
+}
+
+.tags a {
+    font-size: 10px;
+    color: #f4f4f4;
+    background-color: #aaa;
+    border: 3px solid #fff;
+    padding: 4px;
+    border-radius: 15%;
+}
+
+/* HERO HOVER */
+.whisk img:hover {
+    transform: scale(1.1);
+}
+
+.tags a:hover {
+    font-size: 10px;
+    color: #dfdcdc;
+    background-color: #aaa;
+    border: 3px solid #fff;
+    padding: 4px;
+    border-radius: 15%;
+}
+
+
+/* INGREDIENTS + INSTRUCTIONS */
+.container {
+    display: flex;
+    margin-top: 4px;
+    color: #3b3937;
+}
+
+.container h4 {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.container ul, .container ol {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.ingredients {
+    width: 500px;
+    margin-left: 40px;
+}
+
+.instructions {
+    width: 1500px;
+    margin-right: 100px;
+}
+
+
+/* TRY THIS */
+.try img {
+    height: 225px;
+    width: auto;
+    margin-left: 25px;
+    margin-top: -50px;
+}
+
+.option-container {
+    color: #3b3937;
+    background-color: #dfdcdc;
+    padding: 12px;
+    margin-top: -115px;
+}
+
+.option-container h5{
+    margin-left: -60px;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.card-container {
+    display: flex;
+    gap: 40px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card {
+    width: 310px;
+}
+
+.card-head {
+    font-size: 17px;
+}
+
+.card p {
+    font-size: 12.5px;
+}
+
+.savory, .sweet {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sweet {
+    margin-top: 50px;
+}
+
+
+/* NUTRITION LABEL */
+.nutrition {
+    background-color: #f4f4f4;
+    color: #3b3937;
+    padding: 10px;
+}
+
+.nutrition-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -10px;
+}
+
+.nutrition-head p, .nutrition-info p {
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.nutrition-head{
+    margin-left: -50px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+    margin-left: 55px;
+    width: 1300px;
+}
+
+
+/* SHOP */
+.essentials img {
+    height: 225px;
+    width: auto;
+    margin-left: 25px;
+    margin-top: -50px;
+}
+
+.shop {
+    color: #3b3937;
+    background-color: #dfdcdc;
+    padding: 25px;
+    margin-top: -115px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.shop-card {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    color: #f4f4f4;
+}
+
+.shop-card img {
+    height: 200px;
+    border-radius: 10px;
+    display: block;
+    border: 5px solid white;
+    transition: transform 0.5s;
+}
+
+.savvy-shop {
+    border-radius: 10px;
+    position: relative;
+    align-self: center;
+    overflow: hidden;
+    color: #f4f4f4;
+}
+
+.savvy-shop img {
+    height: 200px;
+    border-radius: 10px;
+    display: block;
+    border: 1px solid #f4f4f4;
+    transition: transform 0.5s;
+}
+
+.overlay {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), #3b3937);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.overlay i {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -12px;
+}
+
+.overlay h5 {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.shop-card:hover img, .savvy-shop:hover img {
+    transform: scale(1.1);
+}
+
+.shop-card:hover .overlay, .savvy-shop:hover .overlay {
+    transform: scale(1.1);
+    height: 100%;
+}
+
+.shop-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+    width: 1300px;
+}
+
+
+/* SCROLL TO TOP */
+.blank {
+    height: 40px;
+}
+
+#top {
+    scroll-margin-top: 90px;
+}
+
+.scroll {
+    position: absolute;
+    top: 280.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scroll span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-top: 1px solid #3b3937;
+    border-left: 1px solid #3b3937;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll 2s infinite;
+}
+
+.scroll-txt {
+    font-size: 15px;
+    color: #adadad;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 95px;
+}
+
+.scroll span:hover {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-top: 1px solid #dfdcdc;
+    border-left: 1px solid #dfdcdc;
+    transform: rotate(45deg);
+    margin: -10px;
+}
+
+/* FOOTER */
+.footer {
+    height: 100px;
+    background-color: #3b3937;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
