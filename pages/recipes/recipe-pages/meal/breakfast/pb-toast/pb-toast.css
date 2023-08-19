@@ -314,9 +314,12 @@ nav a.active {
 
 .shop-card img {
     height: 200px;
+    width: 200px;
+    object-fit: contain;
     border-radius: 10px;
     display: block;
-    border: 5px solid white;
+    background-color: #fff;
+    border: 2px #fff solid;
     transition: transform 0.5s;
 }
 

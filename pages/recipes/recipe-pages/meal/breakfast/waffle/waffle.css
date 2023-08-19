@@ -314,9 +314,11 @@ nav a.active {
 
 .shop-card img {
     height: 200px;
+    width: 200px;
+    object-fit: contain;
     border-radius: 10px;
     display: block;
-    border: 5px solid white;
+    background-color: #fff;
     transition: transform 0.5s;
 }
 
@@ -391,7 +393,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 243%;
+    top: 242.3%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
