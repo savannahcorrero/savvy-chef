@@ -106,7 +106,7 @@ nav a.active {
 .hero img {
     width: 850px;
     height: 566px;
-    margin-left: -30px;
+    margin-left: -9.5px;
     object-fit: cover;
 }
 
@@ -126,7 +126,7 @@ nav a.active {
 
 .hero-txt h3 {
     font-family: 'Ms Madi', cursive;
-    font-size: 65px;
+    font-size: 75px;
     font-weight: 100;
     color: #967f71;
     text-align: center;
