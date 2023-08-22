@@ -119,7 +119,7 @@ nav a.active {
     border: 2px solid #dfdcdc;
     padding: 25px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-top: -75px;
     margin-bottom: 60px;
     height: 18.5px;
@@ -145,7 +145,7 @@ nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 150px;
 }
 
 .content a {
@@ -199,7 +199,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 128.9%;
+    top: 95.1%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
