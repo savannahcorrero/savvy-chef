@@ -121,7 +121,7 @@ nav a.active {
     display: flex;
     justify-content: space-around;
     margin-top: -75px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     height: 18.5px;
 }
 
@@ -144,13 +144,18 @@ nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 275px;
-    gap: 60px;
+    height: 215px;
+    gap: 125px;
+}
+
+.content a {
+    text-decoration: none;
 }
 
 .card img {
-    height: 225px;
-    width: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
     border-radius: 10px;
     border: 5px solid #fff;
 }
@@ -163,52 +168,31 @@ nav a.active {
     padding: 10px;
 }
 
-
-/* CARD OVERLAY */
-.overlay {
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), #3b3937);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-}
-
-.overlay i {
-    display: flex;
-    justify-content: center;
-    margin-bottom: -12px;
-}
-
-.overlay h5 {
-    font-weight: 100;
+.card h5 {
+    color: #3b3937;
     font-size: 15px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .card:hover img {
     transform: scale(1.1);
 }
 
-.card:hover .overlay {
-    transform: scale(1.1);
-    height: 100%;
+.card:hover h5{
+    margin-top: 15px;
+    font-size: 15px;
+    color: #dfdcdc;
 }
-
 
 /* SHOP DISCLAIMER */
 .shop-disclaimer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 13px;
     font-style: italic;
-    margin-top: 5px;
-    margin-left: 15px;
-    width: 1300px;
+    margin-top: 15px;
 }
 
 /* SCROLL TO TOP */
@@ -222,7 +206,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 187%;
+    top: 169.5%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
