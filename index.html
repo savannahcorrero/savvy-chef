@@ -7,22 +7,70 @@
     <title>SAVVY CHEF</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="index.html"><img src="content/savvy-chef.svg"></a>
+    <div class="top">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="content/savvy-chef.svg"></a>
+            </div>
+            <nav>
+                <a href="pages/recipes/recipes.html">RECIPES</a>
+                <a href="pages/shop/shop.html">SHOP</a>
+                <a href="pages/join/join.html">JOIN</a>
+                <span>SURPRISE ME</span>
+            </nav>    
         </div>
-        <nav>
-            <a href="pages/recipes/recipes.html">RECIPES</a>
-            <a href="pages/shop/shop.html">SHOP</a>
-            <a href="pages/join/join.html">JOIN</a>
-            <a href="pages/surprise/surprise.html">SURPRISE ME</a>
-        </nav>    
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <i class="bi bi-search"></i>
+        </div>
     </div>
 
-    <div class="search">
-        <input type="text" placeholder="Search...">
-        <i class="bi bi-search"></i>
+    <div class="container">
+        <div class="slide-container">
+            <div class="slide fade">
+                <a href="pages/recipes/recipe-pages/meal/breakfast/crepes/crepes.html">
+                    <img src="pages/recipes/recipe-pages/meal/breakfast/crepes/crepe.jpg" alt="French Crepes">
+                    <div class="txt">FRENCH CREPES</div>
+                </a>    
+            </div>
+            <div class="slide fade">
+                <a href="pages/recipes/recipe-pages/meal/desert/choc-wal/choc-wal.html">
+                    <img src="pages/recipes/recipe-pages/meal/desert/choc-wal/choc-walnut.jpg" alt="Muddy Walnut Cake">
+                    <div class="txt">MUDDY WALNUT CAKE</div>
+                </a>    
+            </div>
+            <div class="slide fade">
+                <a href="pages/recipes/recipe-pages/meal/breakfast/pancake/pancake.html">
+                    <img src="pages/recipes/recipe-pages/meal/breakfast/pancake/pumpkin-pancake.jpg" alt="Pumpkin Pancakes">
+                    <div class="txt">PUMPKIN PANCAKES</div>
+                </a>    
+            </div>
+            <div class="slide fade">
+                <a href="pages/recipes/recipe-pages/meal/dinner/ses-chx/ses-chx.html">
+                    <img src="pages/recipes/recipe-pages/meal/dinner/ses-chx/ses-chx.jpg" alt="Sesame Chicken">
+                    <div class="txt">SESAME CHICKEN</div>
+                </a>
+            </div>
+            <div class="slide fade">
+                <a href="pages/recipes/recipe-pages/meal/dinner/spn-pza/spn-pza.html">
+                    <img src="pages/recipes/recipe-pages/meal/dinner/spn-pza/spn-pza.jpg" alt="Spinach Pizza">
+                    <div class="txt">SPINACH PIZZA</div>
+                </a>
+            </div>
+
+            <div class="nav-bubbles">
+                <div class="nav-btn" data-slide="1"></div>
+                <div class="nav-btn" data-slide="2"></div>
+                <div class="nav-btn" data-slide="3"></div>
+                <div class="nav-btn" data-slide="4"></div>
+                <div class="nav-btn" data-slide="5"></div>
+            </div>
+        </div>
     </div>
 
+    <div class="savvy-chef"><img src="content/sc-small.svg" alt="Savvy Chef"></div>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>
