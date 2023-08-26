@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
 }
 
 html {
@@ -110,7 +111,7 @@ nav a.active {
     font-weight: 100;
     color: #967f71;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .directory {
@@ -120,7 +121,6 @@ nav a.active {
     padding: 25px;
     display: flex;
     justify-content: space-around;
-    margin-top: -75px;
     height: 18.5px;
 }
 
@@ -180,7 +180,7 @@ nav a.active {
 .content {
     color: #3b3937;
     padding: 25px;
-    margin-top: 10px;
+    margin-top: -15px;
     height: 400px;
 }
 

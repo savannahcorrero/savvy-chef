@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
 }
 
 html {
@@ -106,7 +107,7 @@ nav a.active {
 .hero img {
     width: 850px;
     height: 566px;
-    margin-left: -14px;
+    margin-left: -13.5px;
     object-fit: cover;
 }
 
@@ -137,7 +138,7 @@ nav a.active {
     font-style: italic;
     color: #adadad;
     font-size: 15px;
-    margin-top: -10px;
+    margin-top: 5px;
 }
 
 .hero p {
@@ -192,13 +193,14 @@ nav a.active {
 /* INGREDIENTS + INSTRUCTIONS */
 .container {
     display: flex;
-    margin-top: 4px;
+    margin-top: 30px;
     color: #3b3937;
 }
 
 .container h4 {
     font-size: 30px;
     font-weight: 100;
+    margin-bottom: 25px;
 }
 
 .container ul, .container ol {
@@ -222,7 +224,7 @@ nav a.active {
     height: 225px;
     width: auto;
     margin-left: 25px;
-    margin-top: -50px;
+    margin-top: -30px;
 }
 
 .option-container {
@@ -230,6 +232,7 @@ nav a.active {
     background-color: #dfdcdc;
     padding: 12px;
     margin-top: -115px;
+    padding-bottom: 20px;
 }
 
 .card-container {
@@ -237,7 +240,7 @@ nav a.active {
     justify-content: center;
     gap: 200px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 35px;
     margin-bottom: 30px;
 }
 
@@ -247,6 +250,7 @@ nav a.active {
 
 .card-head {
     font-size: 17px;
+    margin-bottom: 8px;
 }
 
 .card p {
@@ -264,12 +268,11 @@ nav a.active {
 .nutrition-container {
     display: flex;
     justify-content: space-evenly;
-    margin-top: -10px;
 }
 
 .nutrition-head p, .nutrition-info p {
     font-size: 12px;
-    margin-top: -10px;
+    margin-top: 8px;
 }
 
 .nutrition-head{
@@ -279,8 +282,8 @@ nav a.active {
 .disclaimer {
     font-size: 12px;
     font-style: italic;
-    margin-top: 5px;
-    margin-left: 104px;
+    margin-top: 10px;
+    margin-left: 109px;
     width: 1300px;
 }
 
@@ -348,13 +351,14 @@ nav a.active {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
 }
 
 .overlay i {
     display: flex;
     justify-content: center;
-    margin-bottom: -12px;
+    margin-top: 120px;
+    margin-bottom: 10px;
 }
 
 .overlay h5 {
