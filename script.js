@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].classList.add("fade");
         btns[slideIndex - 1].className += " active";
         t = setTimeout(autoSlide, timedelay);
     }
