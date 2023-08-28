@@ -181,13 +181,14 @@ nav a.active {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
 }
 
 .overlay i {
     display: flex;
     justify-content: center;
-    margin-bottom: -12px;
+    margin-top: 150px;
+    margin-bottom: 5px;
 }
 
 .overlay h5 {
@@ -248,12 +249,11 @@ nav a.active {
 
 /* SHOP DISCLAIMER */
 .shop-disclaimer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 13px;
     font-style: italic;
-    margin-top: 5px;
-    margin-left: 15px;
-    width: 1300px;
+    margin-top: 15px;
 }
 
 /* SCROLL TO TOP */
@@ -267,7 +267,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 379%;
+    top: 379.45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

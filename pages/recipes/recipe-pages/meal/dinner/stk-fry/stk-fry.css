@@ -95,12 +95,6 @@ nav a.active {
     object-fit: cover;
 }
 
-.whisk img {
-    height: 60px;
-    width: auto;
-    padding: 10px;
-}
-
 .hero {
     display: flex;
     justify-content: space-around;
@@ -132,13 +126,24 @@ nav a.active {
 }
 
 .whisk {
-    margin-top: 125px;
     display: flex;
     justify-content: center;
+    align-items: end;
+    margin-top: 125px;
+    gap: 73px;
+}
+
+.whisk img {
+    height: 65px;
+    width: 40px;
 }
 
 .difficulty {
     text-decoration: none;
+}
+
+.difficulty p {
+    margin-top: 15px;
 }
 
 .tags {
@@ -263,14 +268,14 @@ nav a.active {
 }
 
 .nutrition-head{
-    margin-left: -40px;
+    margin-left: -125px;
 }
 
 .disclaimer {
     font-size: 12px;
     font-style: italic;
     margin-top: 10px;
-    margin-left: 122px;
+    margin-left: 65px;
     width: 1280px;
 }
 
@@ -364,10 +369,11 @@ nav a.active {
 }
 
 .shop-disclaimer {
-    text-align: center;
-    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
     font-style: italic;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 
@@ -382,7 +388,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 239.2%;
+    top: 228.7%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
