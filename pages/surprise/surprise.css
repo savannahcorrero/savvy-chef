@@ -137,6 +137,8 @@ nav a.active, nav span.active {
     margin-top: -5px;
 }    
 
+
+/* DIFFICULTY TAG */
 .difficulty {
     color: #fff;
     font-size: 15px;
@@ -160,6 +162,8 @@ nav a.active, nav span.active {
     margin-right: 5px;
 }
 
+
+/* BUTTONS */
 .btns {
     display: flex;
     text-align: center;
