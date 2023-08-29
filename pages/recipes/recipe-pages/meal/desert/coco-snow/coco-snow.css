@@ -109,7 +109,7 @@ nav a.active {
     font-weight: 100;
     color: #967f71;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 25px;
 }
 
@@ -130,12 +130,12 @@ nav a.active {
     justify-content: center;
     align-items: end;
     margin-top: 125px;
-    gap: 16px;
 }
 
 .whisk img {
-    height: 65px;
-    width: 40px;
+    height: 70px;
+    width: 305px;
+    object-fit: contain;
 }
 
 .difficulty {
@@ -152,7 +152,7 @@ nav a.active {
     align-items: center;
     gap: 20px;
     color: #3b3937;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: -55px;
 }
 

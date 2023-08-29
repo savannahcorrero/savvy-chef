@@ -118,7 +118,7 @@ nav a.active {
 }
 
 
-/* RECIPE CARDS */
+/* SHOP CARDS */
 .content {
     color: #3b3937;
     padding: 25px;
@@ -136,9 +136,11 @@ nav a.active {
 
 .card img {
     height: 200px;
-    width: auto;
+    width: 200px;
+    object-fit: contain;
     border-radius: 10px;
     border: 5px solid #fff;
+    background-color: white;
 }
 
 .card-head {

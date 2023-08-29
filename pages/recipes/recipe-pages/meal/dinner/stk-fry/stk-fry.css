@@ -91,7 +91,7 @@ nav a.active {
 .hero img {
     width: 850px;
     height: 566px;
-    margin-left: -66px;
+    margin-left: -61px;
     object-fit: cover;
 }
 
@@ -103,13 +103,17 @@ nav a.active {
     text-align: center;
 }
 
+.hero-txt {
+    margin-right: 15px;
+}
+
 .hero-txt h3 {
     font-family: 'Ms Madi', cursive;
     font-size: 80px;
     font-weight: 100;
     color: #967f71;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 25px;
 }
 
@@ -130,16 +134,22 @@ nav a.active {
     justify-content: center;
     align-items: end;
     margin-top: 125px;
-    gap: 73px;
 }
 
 .whisk img {
-    height: 65px;
-    width: 40px;
+    height: 80px;
+    width: 305px;
+    object-fit: contain;
+    margin-right: -35px;
 }
 
 .difficulty {
     text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .difficulty p {
@@ -152,7 +162,7 @@ nav a.active {
     align-items: center;
     gap: 20px;
     color: #3b3937;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: -55px;
 }
 
