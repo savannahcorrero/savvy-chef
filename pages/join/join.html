@@ -29,12 +29,49 @@
         <div class="overlay">
             <header>Join</header>
             <p>Hungry for a weekly dose of culinary delight? Let us take the hassle out of meal planning for you! Sign up for our newsletter and receive mouthwatering recipes straight to your inbox every week.</p>
-            <form>
-                <input type="email" placeholder="Your email address" class="email">
-                <input type="submit" value="Let's cook!" class="go">
+            <span id="welcome"></span>
+            <form name="join-form" action="https://script.google.com/macros/s/AKfycbwpCWkHB67c40XrmnGviU7hLhyzPIuaKOx-S26g0Pn0gX0URNFnRxrH8Y0wMugTBvwsoQ/exec" method="post">
+                <input type="email" placeholder="Your email address" class="email" name="email">
+                <button type="submit" class="go">Let's Cook!</button>
             </form>
             <p>Indulge in a world of flavors, all while saving time and energy.</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwpCWkHB67c40XrmnGviU7hLhyzPIuaKOx-S26g0Pn0gX0URNFnRxrH8Y0wMugTBvwsoQ/exec';
+            const form = document.forms['join-form'];
+            const emailInput = form.querySelector('.email');
+            const welcome = document.getElementById("welcome");
+
+            // WELCOME MSG + VALID EMAIL MSG 
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+
+                if (!validateEmail(emailInput.value)) {
+                    welcome.innerHTML = 'Please Enter a Valid Email Address';
+                    return;
+                }
+                emailInput.readOnly = true;
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        welcome.innerHTML = "You're In! Welcome to the Savvy Chef Family.";
+                        setTimeout(function() {
+                            welcome.innerHTML = ' ';
+                            emailInput.readOnly = false;
+                            form.reset();
+                        }, 4000);
+                    })
+                    .catch(error => console.error('Error!', error.message));
+            });
+
+            // CHECK FOR VALID EMAIL
+            function validateEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+        });
+    </script>
 </body>
 </html>
