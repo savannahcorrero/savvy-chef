@@ -300,7 +300,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 743%;
+    top: 741%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -333,6 +333,7 @@ nav a.active {
     transform: rotate(45deg);
     margin: -10px;
 }
+
 
 /* FOOTER */
 .footer {

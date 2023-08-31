@@ -400,7 +400,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 257.9%;
+    top: 267.1%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
