@@ -101,7 +101,7 @@ nav a.active, nav span.active {
 
 .surprise-container, .overlay, .btns {
     position: absolute;
-    top: 61%;
+    top: 61.5%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

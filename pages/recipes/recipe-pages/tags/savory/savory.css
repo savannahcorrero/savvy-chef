@@ -94,7 +94,7 @@ nav a.active {
     font-weight: 100;
     color: #967f71;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .directory {
@@ -182,7 +182,7 @@ nav a.active {
 
 .scroll {
     position: absolute;
-    top: 158%;
+    top: 163.82%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
