@@ -1,0 +1,172 @@
+{
+    "breakfast": [
+        {
+            "name": "Breakfast",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/breakfast.html"
+        },
+        {
+            "name": "Croissants",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/croissant/croissant.html"
+        },
+        {
+            "name": "French Crepes",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/crepes/crepes.html"
+        },
+        {
+            "name": "Peanut Butter Toast",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/pb-toast/pb-toast.html"
+        },
+        {
+            "name": "Pumpkin Pancakes",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/pancake/pancake.html"
+        },
+        {
+            "name": "Waffles + Vanilla Cream",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/waffle/waffle.html"
+        }
+    ],
+    "lunch": [
+        {
+            "name": "Lunch",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/lunch.html"
+        },
+        {
+            "name": "Caprese Salad",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/caprese/caprese.html"
+        },
+        {
+            "name": "Chicken Fried Rice",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/chx-rice/chx-rice.html"
+        },
+        {
+            "name": "Quinoa Bowls",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/quinoa-bowl/quinoa-bowl.html"
+        },
+        {
+            "name": "Sesame Chicken + Green Beans",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/chx-gb/chx-gb.html"
+        },
+        {
+            "name": "Stuffed Bell Peppers",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/bell-pep/bell-pep.html"
+        }
+    ],
+    "dinner": [
+        {
+            "name": "Dinner",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/dinner.html"
+        },
+        {
+            "name": "Spaghetti Bolognese",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/bolognese/bol.html"
+        },
+        {
+            "name": "Spinach Pizza",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/spn-pza/spn-pza.html"
+        },
+        {
+            "name": "Steak Fries",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/stk-fry/stk-fry.html"
+        },
+        {
+            "name": "Steak Tacos",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/stk-taco/stk-taco.html"
+        },
+        {
+            "name": "Sesame Chicken",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/ses-chx/ses-chx.html"
+        }
+    ],
+    "dessert": [
+        {
+            "name": "Dessert",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/desert.html"
+        },
+        {
+            "name": "Chia Pudding",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/chia/chia.html"
+        },
+        {
+            "name": "Coconut Snowballs",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/coco-snow/coco-snow.html"
+        },
+        {
+            "name": "Muddy Walnut Cake",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/choc-wal/choc-wal.html"
+        },
+        {
+            "name": "Raspberry Muffins",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/rasp-muf/rasp-muf.html"
+        },
+        {
+            "name": "Smoothie Bowls",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/smoothie-bowl/smoothie-bowl.html"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Summer",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/tags/summer/summer.html"
+        },
+        {
+            "name": "Fall",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/tags/fall/fall.html"
+        },
+        {
+            "name": "Winter",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/tags/winter/winter.html"
+        },
+        {
+            "name": "Sweet",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/tags/sweet/sweet.html"
+        },
+        {
+            "name": "Savory",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/tags/savory/savory.html"
+        }
+    ],
+    "difficulty": [
+        {
+            "name": "Difficulty",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/difficulty/difficulty.html"
+        },
+        {
+            "name": "Effortless",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/difficulty/difficulty.html"
+        },
+        {
+            "name": "Moderate",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/difficulty/difficulty.html"
+        },
+        {
+            "name": "Complex",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/difficulty/difficulty.html"
+        }
+    ],
+    "shop": [
+        {
+            "name": "Bakeware",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/shop/shop-pages/bake/bake.html"
+        },
+        {
+            "name": "Basics",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/shop/shop-pages/basics/basic.html"
+        },
+        {
+            "name": "Food",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/shop/shop-pages/food/food.html"
+        },
+        {
+            "name": "Grilling",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/shop/shop-pages/grill/grill.html"
+        },
+        {
+            "name": "Specialty",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/shop/shop-pages/special/special.html"
+        },
+        {
+            "name": "Stovetop",
+            "url": "https://savvy-chef.savannahcorrero.com/pages/shop/shop-pages/stove/stove.html"
+        }
+    ]
+}
