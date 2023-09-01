@@ -1,93 +1,74 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // SEARCH BAR
-    let searchContent = [];
+    let searchContent = "";
     const box = document.querySelector(".auto-box");
-
+    const search = document.querySelector(".search-bar");
+    let searchTimeout;
+    
     // FETCH JSON DATA
     fetch("https://savvy-chef.savannahcorrero.com/search.json")
         .then(async (response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
+            searchContent = await response.json();
         })
-        .then((data) => {
-            searchContent = data;
-            searchContent.forEach((searchResult) => results(searchResult));
+        .then(() => {
+
+            // DISPLAY SEARCH RESULTS
+            const results = (searchResults) => {
+                box.innerHTML = "";
+                if (searchResults.length === 0) {
+                    box.innerHTML = "No results found";
+                    return;
+                }
+                searchResults.forEach((result) => {
+                    const { name, url } = result;
+                    const searchResult = document.createElement("li");
+                    searchResult.className = "search-result";
+                    searchResult.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
+                    box.appendChild(searchResult);
+                });
+            };
+
+            const handleResults = (query) => {
+                const searchQuery = query.trim().toLowerCase();
+
+                if (searchQuery.length <= 1) {
+                    return;
+                }
+
+                const searchResults = Object.keys(searchContent)
+                    .flatMap((category) => searchContent[category])
+                    .filter((recipe) =>
+                        recipe.name.toLowerCase().includes(searchQuery)
+                    );
+
+                results(searchResults);
+
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    box.innerHTML = "";
+                }, 5000);
+            };
+
+            let debounceTimer;
+        
+            const debounce = (callback, time) => {
+                window.clearTimeout(debounceTimer);
+                debounceTimer = window.setTimeout(callback, time);
+            };
+        
+            search.addEventListener("input", (event) => {
+                const query = event.target.value;
+                debounce(() => handleResults(query), 500);
+            });
+
+        
         })
         .catch((error) => {
-            console.error("Fetch error:", error);
-        });
+            console.error("Error fetching data:", error);
+    });
 
 
-    // DISPLAY SEARCH RESULTS
-    const results = (searchContent) => {
-        const { name, url } = searchContent;
-        const searchResult = document.createElement("li");
-        searchResult.className = "search-result";
-        searchResult.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
-        box.append(searchResult);
-
-        if (searchResult.length == 0) {
-            searchResult.innerHTML = "No results found";
-        }
-    };
-
-    const handleResults = (query) => {
-        const searchQuery = query.trim().toLowerCase();
-
-        if (searchQuery.length <= 1) {
-            return;
-        }
-
-        let resultFilter = searchContent.filter(
-            (searchResult) =>
-                searchResult.categories.some((category) =>
-                    category.toLowerCase().includes(searchQuery)
-                ) || searchResult.title.toLowerCase().includes(query)
-        );
-
-        box.innerHTML = "";
-        resultFilter.forEach((searchResult) => results(searchResult));
-    };
-
-    let resultFilter = [...searchContent].filter(
-        (searchResult) =>
-        searchResult.categories.some((category) => category.toLowerCase().includes(searchQuery)) ||
-        searchResult.title.toLowerCase().includes(query)
-    );
-
-    box.innerHTML = "";
-    resultFilter.map((searchResult) => results(searchResult));
-
-
-    // RESET SEARCH RESULTS
-    const reset = () => {
-        search.innerHTML = ""
-        searchResult.innerHTML = "";
-        searchResult.map((searchResult) => results(searchResult));
-    };
-    
-    const search = document.querySelector(".search-bar");
-    let debounceTimer;
-    
-    const debounce = (callback, time) => {
-        window.clearTimeout(debounceTimer);
-        debounceTimer = window.setTimeout(callback, time);
-    };
-
-    search.addEventListener(
-        "input",
-        (event) => { 
-            const query = event.target.value;
-            debounce(() => handleResults(query), 500);
-        },
-        false
-    );
-
-
-    
     // PHOTO CAROUSEL
     let slideIndex = 1;
     let t;

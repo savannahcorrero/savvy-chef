@@ -123,7 +123,6 @@ nav a.active, nav span.active {
   
 .auto-box li:hover {
     background-color: #dfdcdc;
-    color: #fff;
 }
   
 .search-input-container:hover .auto-box {
@@ -132,6 +131,11 @@ nav a.active, nav span.active {
 
 .search-result a {
     text-decoration: none;
+    color: #3b3937;
+}
+
+.search-result a:hover {
+    color: #fff;
 }
 
 
