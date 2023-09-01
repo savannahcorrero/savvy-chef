@@ -1,24 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // SEARCH BAR
-    let searchContent = "";
+    let searchContent = [];
     const box = document.querySelector(".auto-box");
-    
-    fetch("https://savvy-chef.savannahcorrero.com/search.json")
-    .then(async (response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      searchContent = data;
-      searchContent.forEach((searchResult) => results(searchResult));
-    })
-    .catch((error) => {
-      console.error("Fetch error:", error);
-    });
 
+    // FETCH JSON DATA
+    fetch("https://savvy-chef.savannahcorrero.com/search.json")
+        .then(async (response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            searchContent = data;
+            searchContent.forEach((searchResult) => results(searchResult));
+        })
+        .catch((error) => {
+            console.error("Fetch error:", error);
+        });
+
+
+    // DISPLAY SEARCH RESULTS
     const results = (searchContent) => {
         const { name, url } = searchContent;
         const searchResult = document.createElement("li");
@@ -27,16 +30,26 @@ document.addEventListener('DOMContentLoaded', function() {
         box.append(searchResult);
 
         if (searchResult.length == 0) {
-            searchResult.innerHTML = "No results found"
-        };
+            searchResult.innerHTML = "No results found";
+        }
     };
 
     const handleResults = (query) => {
         const searchQuery = query.trim().toLowerCase();
-        
+
         if (searchQuery.length <= 1) {
-          return
+            return;
         }
+
+        let resultFilter = searchContent.filter(
+            (searchResult) =>
+                searchResult.categories.some((category) =>
+                    category.toLowerCase().includes(searchQuery)
+                ) || searchResult.title.toLowerCase().includes(query)
+        );
+
+        box.innerHTML = "";
+        resultFilter.forEach((searchResult) => results(searchResult));
     };
 
     let resultFilter = [...searchContent].filter(
@@ -48,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
     box.innerHTML = "";
     resultFilter.map((searchResult) => results(searchResult));
 
+
+    // RESET SEARCH RESULTS
     const reset = () => {
         search.innerHTML = ""
         searchResult.innerHTML = "";
@@ -72,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     );
 
 
+    
     // PHOTO CAROUSEL
     let slideIndex = 1;
     let t;
