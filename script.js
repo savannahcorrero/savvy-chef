@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let searchContent = "";
     const box = document.querySelector(".auto-box");
     
-    fetch("http://savvy-chef.savannahcorrero.com/search.json").then(async (response) => {
+    fetch("https://savvy-chef.savannahcorrero.com/search.json").then(async (response) => {
         searchContent = await response.json();
         searchContent.map((searchResult) => results(searchResult));
     });
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     };
 
-    const handleResultPosts = (query) => {
+    const handleResults = (query) => {
         const searchQuery = query.trim().toLowerCase();
         
         if (searchQuery.length <= 1) {
