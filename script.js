@@ -4,9 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let searchContent = "";
     const box = document.querySelector(".auto-box");
     
-    fetch("https://savvy-chef.savannahcorrero.com/search.json").then(async (response) => {
-        searchContent = await response.json();
-        searchContent.map((searchResult) => results(searchResult));
+    fetch("https://savvy-chef.savannahcorrero.com/search.json")
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      searchContent = data;
+      searchContent.forEach((searchResult) => results(searchResult));
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error);
     });
 
     const results = (searchContent) => {
