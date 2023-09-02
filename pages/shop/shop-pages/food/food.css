@@ -233,52 +233,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     font-size: 13px;
     font-style: italic;
     margin-top: 30px;
+    padding-bottom: 25px;
 }
 
-/* SCROLL TO TOP */
-.blank {
-    height: 40px;
-}
-
-#top {
-    scroll-margin-top: 90px;
-}
-
-.scroll {
-    position: absolute;
-    top: 163.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.scroll span {
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-top: 1px solid #3b3937;
-    border-left: 1px solid #3b3937;
-    transform: rotate(45deg);
-    margin: -10px;
-}
-
-.scroll-txt {
-    font-size: 15px;
-    color: #adadad;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    margin-top: 95px;
-}
-
-.scroll span:hover {
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-top: 1px solid #dfdcdc;
-    border-left: 1px solid #dfdcdc;
-    transform: rotate(45deg);
-    margin: -10px;
-}
 
 /* FOOTER */
 .footer {

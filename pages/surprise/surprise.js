@@ -268,6 +268,9 @@ document.addEventListener('DOMContentLoaded', function() {
             imgElement.src = postsData[postIndex].thumbnail;
             titleElement.textContent = postsData[postIndex].title;
             difficultyElement.textContent = postsData[postIndex].difficulty;
+
+            const letsCookButton = randomPost.querySelector(".read-more-btn");
+            letsCookButton.href = postsData[postIndex].link;
     
             setTimeout(() => {
                 imgElement.style.opacity = 0.6;
