@@ -111,7 +111,7 @@ nav a.active, nav span.active {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
 }
 
-.auto-box li {
+.auto-box li, .no-result {
     font-size: 12px;
     float: none;
     color: #3b3937;
@@ -193,7 +193,7 @@ nav a.active, nav span.active {
     object-position: center;
     height: 80vh;
     width: 100vw;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: opacity 3s ease-in-out;
 }
 
@@ -206,10 +206,10 @@ nav a.active, nav span.active {
 
 @keyframes fade-image {
     0%, 100% {
-        opacity: 0.7;
+        opacity: 0.8;
     }
     33.33%, 66.66% {
-        opacity: 0.5;
+        opacity: 0.6;
     }
 }
 

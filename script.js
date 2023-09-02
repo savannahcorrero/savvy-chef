@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const results = (searchResults) => {
                 box.innerHTML = "";
                 if (searchResults.length === 0) {
-                    box.innerHTML = "No results found";
-                    return;
+                    box.innerHTML = "<p class='no-result'>No Results Found</p>";
+                    return
                 }
                 searchResults.forEach((result) => {
                     const { name, url } = result;
