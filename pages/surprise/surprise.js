@@ -1,165 +1,234 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // SEARCH BAR
+    let searchContent = "";
+    const box = document.querySelector(".auto-box");
+    const search = document.querySelector(".search-bar");
+    let searchTimeout;
 
+    // FETCH JSON DATA
+    fetch("https://savvy-chef.savannahcorrero.com/search.json")
+        .then(async (response) => {
+            searchContent = await response.json();
+        })
+        .then(() => {
+
+            // DISPLAY SEARCH RESULTS
+            const results = (searchResults) => {
+                box.innerHTML = "";
+                if (searchResults.length === 0) {
+                    box.innerHTML = "<p class='no-result'>No Results Found</p>";
+                    return
+                }
+                searchResults.forEach((result) => {
+                    const { name, url } = result;
+                    const searchResult = document.createElement("li");
+                    searchResult.className = "search-result";
+                    searchResult.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
+                    box.appendChild(searchResult);
+                });
+            };
+
+            const handleResults = (query) => {
+                const searchQuery = query.trim().toLowerCase();
+
+                if (searchQuery.length <= 1) {
+                    return;
+                }
+
+                const searchResults = Object.keys(searchContent)
+                    .flatMap((category) => searchContent[category])
+                    .filter((recipe) =>
+                        recipe.name.toLowerCase().includes(searchQuery)
+                    );
+
+                results(searchResults);
+
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    box.innerHTML = "";
+                }, 5000);
+            };
+
+            let debounceTimer;
+        
+            const debounce = (callback, time) => {
+                window.clearTimeout(debounceTimer);
+                debounceTimer = window.setTimeout(callback, time);
+            };
+        
+            search.addEventListener("input", (event) => {
+                const query = event.target.value;
+                debounce(() => handleResults(query), 500);
+            });
+
+        
+        })
+        .catch((error) => {
+            console.error("Error fetching data:", error);
+    });
+
+
+    // SURPRISE CARD
     const postsData = [
         {
             title: "French Crepes",
             thumbnail:
-                "https://images.pexels.com/photos/6811161/pexels-photo-6811161.jpeg",
+                "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/crepes/crepe.jpg",
             difficulty:
                 "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/crepes/crepes.html",
         },
         {
             title: "Croissants",
             thumbnail:
-            "https://images.pexels.com/photos/3850431/pexels-photo-3850431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/croissant/croissant.jpg",
             difficulty:
             "Complex",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/croissant/croissant.html",
         },
         {
             title: "Peanut Butter Toast",
             thumbnail:
-            "https://images.pexels.com/photos/13689949/pexels-photo-13689949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/pb-toast/pb-toast.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/pb-toast/pb-toast.html",
         },
         {
             title: "Pumpkin Pancakes",
             thumbnail:
-            "https://images.pexels.com/photos/5377575/pexels-photo-5377575.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/pancake/pumpkin-pancake.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/pancake/pancake.html",
         },
         {
             title: "Waffles + Vanilla Cream",
             thumbnail:
-            "https://images.pexels.com/photos/221063/pexels-photo-221063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/waffle/waffle.jpg",
             difficulty:
             "Moderate",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/breakfast/waffle/waffle.html",
         },
         {
             title: "Stuffed Bell Peppers",
             thumbnail:
-            "https://images.pexels.com/photos/1438540/pexels-photo-1438540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/bell-pep/bell-pep.jpg",
             difficulty:
             "Moderate",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/bell-pep/bell-pep.html",
         },
         {
             title: "Caprese Salad",
             thumbnail:
-            "https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/caprese/caprese.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/caprese/caprese.html",
         },
         {
             title: "Chicken Fried Rice",
             thumbnail:
-            "https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/chx-rice/chx-rice.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/chx-rice/chx-rice.html",
         },
         {
             title: "Sesame Chicken + Green Beans",
             thumbnail:
-            "https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/chx-gb/chx-gb.jpg",
             difficulty:
             "Moderate",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/chx-gb/chx-gb.html",
         },
         {
             title: "Quinoa Bowls",
             thumbnail:
-            "https://images.pexels.com/photos/248509/pexels-photo-248509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/quinoa-bowl/quinoa-bowl.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/lunch/quinoa-bowl/quinoa-bowl.html",
         },
         {
             title: "Spaghetti Bolognese",
             thumbnail:
-            "https://images.pexels.com/photos/4349774/pexels-photo-4349774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/bolognese/bol.jpg",
             difficulty:
             "Complex",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/bolognese/bol.html",
         },
         {
             title: "Sesame Chicken",
             thumbnail:
-            "https://images.pexels.com/photos/3386854/pexels-photo-3386854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/ses-chx/ses-chx.jpg",
             difficulty:
             "Moderate",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/ses-chx/ses-chx.html",
         },
         {
             title: "Spinach Pizza",
             thumbnail:
-            "https://images.pexels.com/photos/5902959/pexels-photo-5902959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/spn-pza/spn-pza.jpg",
             difficulty:
             "Moderate",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/spn-pza/spn-pza.html",
         },
         {
             title: "Steak Fries",
             thumbnail:
-            "https://images.pexels.com/photos/2741461/pexels-photo-2741461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/stk-fry/stk-fry.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/stk-fry/stk-fry.html",
         },
         {
             title: "Steak Tacos",
             thumbnail:
-            "https://images.pexels.com/photos/7613561/pexels-photo-7613561.jpeg",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/stk-taco/stk-tacos.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/dinner/stk-taco/stk-taco.html",
         },
         {
             title: "Chia Pudding",
             thumbnail:
-            "https://images.pexels.com/photos/5645173/pexels-photo-5645173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/chia/chia-pudding.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/chia/chia.html",
         },
         {
             title: "Muddy Walnut Cake",
             thumbnail:
-            "https://images.pexels.com/photos/8616836/pexels-photo-8616836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/choc-wal/choc-walnut.jpg",
             difficulty:
             "Complex",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/choc-wal/choc-wal.html",
         },
         {
             title: "Coconut Snowballs",
             thumbnail:
-            "https://images.pexels.com/photos/3525754/pexels-photo-3525754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/coco-snow/coconut-snow.jpg",
             difficulty:
             "Moderate",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/coco-snow/coco-snow.html",
         },
         {
             title: "Raspberry Muffins",
             thumbnail:
-            "https://images.pexels.com/photos/4051605/pexels-photo-4051605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/rasp-muf/rasp-muf.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/rasp-muf/rasp-muf.html",
         },
         {
             title: "Smoothie Bowls",
             thumbnail:
-            "https://images.pexels.com/photos/3872248/pexels-photo-3872248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/smoothie-bowl/smoothie-bowl.jpg",
             difficulty:
             "Effortless",
-            link: "#",
+            link: "https://savvy-chef.savannahcorrero.com/pages/recipes/recipe-pages/meal/desert/smoothie-bowl/smoothie-bowl.html",
         },
     ];
 
